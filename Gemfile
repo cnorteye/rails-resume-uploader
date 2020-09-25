@@ -23,52 +23,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-group :development, :test do
-# Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-group :development do
-# Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.2'
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
-end
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# add bootstrap
-gem 'bootstrap-sass'
-#sqlite3 for test and development db and postgres for production db
-group :test, :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
-#CarrierWave
-gem 'carrierwave', '~> 0.11.2'
 
-#Bootstap
-gem 'bootstrap', '~> 5.0.0.alpha1'
 
-#jQuery
-gem 'jquery-rails'
+# Use Uglifier as compressor for JavaScript assets
+ gem 'uglifier', '>= 1.3.0'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -78,22 +41,31 @@ gem 'coffee-rails', '~> 4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# group :development, :test do
-#   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-#   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-#   # Adds support for Capybara system testing and selenium driver
-#   gem 'capybara', '>= 2.15'
-#   gem 'selenium-webdriver'
-# end
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+end
 
-# group :development do
-#   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-#   gem 'web-console', '>= 3.3.0'
-# end
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+end
 
-# # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# group :test, :development do
-#   gem 'sqlite3'
-# end
+#CarrierWave
+gem 'carrierwave', '~> 0.11.2'
+
+#Bootstap
+gem 'bootstrap', '~> 5.0.0.alpha1'
+
+#jQuery
+gem 'jquery-rails'
+
+group :test, :development do
+  gem 'sqlite3'
+end
